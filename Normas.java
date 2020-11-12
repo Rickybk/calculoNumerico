@@ -14,7 +14,7 @@ public class Normas
     }
     
    
-    public void normaInfinito(double[][] matrix)
+    public double normaInfinito(double[][] matrix)
     {
         System.out.println("Norma A\u221E");
         double sumatoria = 0;
@@ -36,6 +36,7 @@ public class Normas
         }
         System.out.println("El mayor es "+mayor);
         //System.out.println("\u03B1\u03B2\u03B3");
+        return mayor;
     }
 
     public double normaUno(double[][] matrix){
