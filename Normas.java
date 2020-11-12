@@ -54,7 +54,7 @@ public class Normas
             for(int j = 0;j<=n-1;j++){
                 sumatoria = sumatoria + Math.abs(matrix[j][i]);
             }
-            System.out.print("i = "+(i+1)+"      "+sumatoria+"\n");
+            System.out.print("j = "+(i+1)+"      "+sumatoria+"\n");
             if(mayor<sumatoria){
                 mayor = sumatoria;
             }
