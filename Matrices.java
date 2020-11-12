@@ -144,9 +144,12 @@ public class Matrices
         return identidad;
     }
     //Convierte decimal a fracciones.
-    public void decimalToFraction(double decimal){
+    public String decimalToFraction(double decimal){
+        String fraccion = "";
         Fraction f = new Fraction(decimal);
-        System.out.println(f);
+        fraccion = f.toString();
+        //System.out.println(f);
+        return fraccion;
     }
     
     

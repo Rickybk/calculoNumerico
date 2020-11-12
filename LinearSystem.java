@@ -27,8 +27,14 @@ public class LinearSystem
         System.out.println("La condicion del sistema lineal dado  A\u2081 : Cond(A) = |A\u207B\u00B9|\u2081 * |A|\u2081");
         //Convertimos los Ints a Strings para poder mostrarlos
         String normaA1String   = Double.toString(normaA1);
-        String normaA1_tString = Double.toString(normaA1_t); 
-        System.out.println("es =  "+normaA1_tString+" * "+ normaA1String + " = "+ (normaA1*normaA1_t));
+        String normaA1_tString = matrices.decimalToFraction(normaA1_t); 
+        String resultado       = matrices.decimalToFraction((normaA1*normaA1_t));
+        System.out.println("es =  "+normaA1_tString+" * "+ normaA1String + " = "+resultado + " = "+ (normaA1*normaA1_t));
+        if((normaA1*normaA1_t)>=1 && (normaA1*normaA1_t)< 30 ){
+            System.out.println("Como 1 <= Cond(A) = "+ normaA1*normaA1_t +" <= 30 "+"Esta bien condicionado");
+        } else {
+            System.out.println("No esta bien condicionado");
+        }
     }
     
     public void condicionA2(){
