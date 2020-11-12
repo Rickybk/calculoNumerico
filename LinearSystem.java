@@ -24,8 +24,11 @@ public class LinearSystem
         //Saco la normaUno de la inversa de la matriz A (A^-1)
         normaA1_t = norma.normaUno(matrices.inversaMatrix(matrix));
         //Saco el producto de ambas para conseguir la Condicion_1
-        System.out.println("Condicion de A\u2081");
-        System.out.println("es: "+normaA1 * normaA1_t);
+        System.out.println("La condicion de A\u2081");
+        //Convertimos los Ints a Strings para poder mostrarlos
+        String normaA1String   = Double.toString(normaA1);
+        String normaA1_tString = Double.toString(normaA1_t); 
+        System.out.println("es =  "+normaA1String+" * "+ normaA1_tString + " = "+ (normaA1*normaA1_t));
     }
     
     public void condicionA2(){

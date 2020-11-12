@@ -59,7 +59,7 @@ public class Normas
                 mayor = sumatoria;
             }
         }
-        System.out.println("El mayor es "+mayor);
+        System.out.println("El mayor es A\u2081 = "+mayor);
         return mayor; 
     }
 

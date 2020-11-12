@@ -140,7 +140,7 @@ public class Matrices
         //mostrarMatrix(identidad);
         return identidad;
     }
-    
+    //Convierte decimal a fracciones.
     public void decimalToFraction(double decimal){
         Fraction f = new Fraction(decimal);
         System.out.println(f);
