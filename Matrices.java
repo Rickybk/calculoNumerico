@@ -124,9 +124,12 @@ public class Matrices
         //Imprimimos el resultado
         System.out.println("La inversa de la matriz ingresada es : ");
         System.out.println(auxIdentidad);
+        System.out.println("En fraccion :");
+        
         //Usamos el metodo gerData() que tiene la clase RealMatrix para poder obtener los valores de la matriz
         //en un formato de matriz double[][].
         inversa = B.getData();
+        mostrarMatrixFraccion(inversa);
         return inversa;
     }
     
@@ -144,5 +147,16 @@ public class Matrices
     public void decimalToFraction(double decimal){
         Fraction f = new Fraction(decimal);
         System.out.println(f);
+    }
+    
+    
+    public void mostrarMatrixFraccion(double [][] matrix){
+        for(int i = 0; i<matrix.length; i++){
+            for(int j = 0; j<matrix.length; j++){
+                Fraction f = new Fraction(matrix[i][j]);
+                System.out.print(f+" ");
+            }
+            System.out.println("\n");
+        }
     }
 }
