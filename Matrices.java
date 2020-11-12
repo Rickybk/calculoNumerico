@@ -69,22 +69,6 @@ public class Matrices
         return transpuesta; 
     }
     
-    /*public void matrixInversa(double[][] matrix){
-        Matrix a = new Matrix(matrix);
-        double [] rhs = { 9, 1, 0 }; // rhs vector
-        double [] answer = { 1, 2, 3 }; // this is the answer that you should get.
-        a.print(10,2);
-        LUDecomposition luDecomposition = new LUDecomposition(a);
-        luDecomposition.getL().print(10, 2); // lower matrix
-        luDecomposition.getU().print(10, 2); // upper matrix
-
-        Matrix b = new Matrix(rhs, rhs.length);
-        Matrix x = luDecomposition.solve(b); // solve Ax = b for the unknown vector x
-        x.print(10, 2); // print the solution
-        Matrix residual = a.times(x).minus(b); // calculate the residual error
-        double rnorm = residual.normInf(); // get the max error (yes, it's very small)
-        System.out.println("residual: " + rnorm);
-    }*/
     
     public void pruebaMatrix(double[][] Matrix){
         double [][] values = {{1, 1, 2}, {2, 4, -3}, {3, 6, -5}};
@@ -110,7 +94,7 @@ public class Matrices
     
     public double[][] inversaMatrix(double[][] Matrix){
         double [][] values = {{1, 1, 2}, {2, 4, -3}, {3, 6, -5}};
-        double [][] rhs = {{1, 0},{0,1}};
+        double [][] identidad = generadorIdentidad(Matrix.length);       
         double [][] inversa;
         // Solving AB = I for given A
         RealMatrix A = new Array2DRowRealMatrix(Matrix);
@@ -125,10 +109,20 @@ public class Matrices
         //System.out.println("Veamos "+ A);
         DecompositionSolver solver = new LUDecomposition(A).getSolver();
 
-        RealMatrix I = new Array2DRowRealMatrix(rhs);
+        RealMatrix I = new Array2DRowRealMatrix(identidad);
         RealMatrix B = solver.solve(I);
         System.out.println("Inverse B: " + B);
         inversa = B.getData();
         return inversa;
+    }
+    
+    public double[][] generadorIdentidad(int dimension){
+        //Este metodo genera una matrix Identidad de tamano 'dimension' dado por parametro
+        double [][] identidad = new double[dimension][dimension];
+        for(int i = 0; i < dimension;i++){
+                identidad[i][i] = 1;
+        }
+        mostrarMatrix(identidad);
+        return identidad;
     }
 }
