@@ -9,6 +9,7 @@ public class LinearSystem
     public LinearSystem(double[][] matrix)
     {
         condicionA1(matrix);
+        condicionAInfinito(matrix);
        
     }
 
