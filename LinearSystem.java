@@ -52,12 +52,20 @@ public class LinearSystem
         //Saco la normaInfinito de la matriz A
         normaAInfinito = norma.normaInfinito(matrix);        
         //Saco la normaInfinito de la inversa de la matriz A (A^-1)
-        normaAInfinito_t = norma.normaInfinito(matrices.inversaMatrix(matrix));
-        normaAInfinito_tString = Double.toString(normaAInfinito_t);
+        normaAInfinito_t       = norma.normaInfinito(matrices.inversaMatrix(matrix));
+        //Convertimos los decimales a fraccion y los almacenamos en Strings para mostrarlos luego.
+        normaAInfinito_tString = matrices.decimalToFraction(normaAInfinito_t);
+        normaAInfinitoString   = matrices.decimalToFraction(normaAInfinito);
         String resultado       = matrices.decimalToFraction(normaAInfinito*normaAInfinito_t);
         //Saco el producto de ambas para conseguir la Condicion_Infinito
         System.out.println("Condicion de A\u221E");
-        System.out.println("es =  "+normaAInfinito_tString+" * "+ normaAInfinitoString + " = "+resultado + " = "+ (normaAInfinito*normaAInfinito_t));
-        System.out.println("es :"+normaAInfinito * normaAInfinito_t);
+        System.out.println("es =  "+normaAInfinito_tString+" * "+ normaAInfinitoString + " = "+resultado + 
+        " = "+ (normaAInfinito*normaAInfinito_t));
+        if((normaAInfinito*normaAInfinito_t)>=1 && (normaAInfinito*normaAInfinito_t)< 30 ){
+            System.out.println("Como 1 <= Cond(A) = "+ normaAInfinito*normaAInfinito_t +" <= 30 "+"Esta bien condicionado");
+        } else {
+            System.out.println("No esta bien condicionado");
+        }
+        
     }
 }

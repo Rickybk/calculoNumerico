@@ -19,17 +19,19 @@ public class Normas
         System.out.println("Norma A\u221E");
         double sumatoria = 0;
         double mayor = 0;
+        String fraccion = "";
         int n = matrix.length;
         int m = matrix[0].length;
         matriz.mostrarMatrix(matrix);
         System.out.print(" "+n+"X"+m+"\n");
 
-        for(int i = 0;i <= n-1;i++){
+        for(int i = 0;i < n;i++){
             sumatoria = 0;
-            for(int j = 0;j<=m-1;j++){
+            for(int j = 0;j< m;j++){
                 sumatoria = sumatoria + Math.abs(matrix[i][j]);
             }
-            System.out.print("i = "+(i+1)+"      "+sumatoria+"\n");
+            fraccion = matriz.decimalToFraction(sumatoria);
+            System.out.print("i = "+(i+1)+"      "+sumatoria+" en fraccion: "+fraccion+"\n");
             if(mayor<sumatoria){
                 mayor = sumatoria;
             }
