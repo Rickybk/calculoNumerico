@@ -40,6 +40,9 @@ public class LinearSystem
     }
     
     public void condicionA2(double[][] matrix){
+        double[][] inversaMatrix;
+        double[][] resultado;
+        double[][] transpuesta;
         System.out.println("La condicion del sistema lineal dado  A\u2082 : Cond(A) = sqrt(|A\u207B\u00B9|\u2082 * |A|\u2082)");
         System.out.println("Es la raiz del producto");
         System.out.println("La matriz ingresada es : ");
@@ -48,8 +51,24 @@ public class LinearSystem
         matrices.mostrarMatrix(matrices.matrixTranspuesta(matrix));
         System.out.println("Y el producto entre ambas es :");
         matrices.mostrarMatrix(matrices.multiplicacion(matrices.matrixTranspuesta(matrix),matrix));
+        System.out.println("Ahora que tenemos A\u209C*A calculamos los valores propios");
+        System.out.println("Recuerda es la raiz del valor propio mas grande \u221A(|A|\u2082))");
+        System.out.println("---------------------------------------------------------------------");
         System.out.println("Ahora repetimos el proceso, pero con la matrix inversa");
-        matrices.mostrarMatrix(matrices.inversaMatrix(matrix));
+        inversaMatrix = matrices.inversaMatrix(matrix);
+        matrices.mostrarMatrix(inversaMatrix);
+        System.out.println("Ahora calculamos la tranpuesta de la matrix inversa : ");
+        transpuesta = matrices.matrixTranspuesta(inversaMatrix);
+        matrices.mostrarMatrix(transpuesta); 
+        System.out.println("En decimales :");
+        matrices.mostrarMatrixFraccion(transpuesta);
+        System.out.println("Ahora calculamos el producto de ambas :");
+        //Algun dia arreglare este codigo chancho pero de momento funciona :'v
+        //No olvidar que la multiplicacion de matrices debe ir primero la tranpuesta.
+        resultado = matrices.multiplicacion(transpuesta,inversaMatrix);
+        matrices.mostrarMatrix(resultado);
+        System.out.println("Ahora que tenemos A\u207b\u00B9\u209C*A\u207b\u00B9 calculamos los valores propios");
+        System.out.println("Recuerda es la raiz del valor propio mas grande \u221A(|A\u207b\u00B9|\u2082)");
     }
     
     public void condicionAInfinito(double[][] matrix){

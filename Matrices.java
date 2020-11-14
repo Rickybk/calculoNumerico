@@ -123,13 +123,14 @@ public class Matrices
         String auxIdentidad = identidadString.replace("},", "} \n").replace("Array2DRowRealMatrix",""); 
         //Imprimimos el resultado
         System.out.println("La inversa de la matriz ingresada es : ");
-        System.out.println(auxIdentidad);
+        //System.out.println(auxIdentidad);
         System.out.println("En fraccion :");
         
-        //Usamos el metodo gerData() que tiene la clase RealMatrix para poder obtener los valores de la matriz
+        //Usamos el metodo getData() que tiene la clase RealMatrix para poder obtener los valores de la matriz
         //en un formato de matriz double[][].
         inversa = B.getData();
         mostrarMatrixFraccion(inversa);
+        System.out.println("En decimales :");
         return inversa;
     }
     
