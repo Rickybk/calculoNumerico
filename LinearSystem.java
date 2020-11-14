@@ -9,7 +9,8 @@ public class LinearSystem
     public LinearSystem(double[][] matrix)
     {
         //condicionA1(matrix);
-        condicionAInfinito(matrix);
+        condicionA2(matrix);
+        //condicionAInfinito(matrix);
        
     }
 
@@ -38,8 +39,17 @@ public class LinearSystem
         }
     }
     
-    public void condicionA2(){
-        System.out.println("Norma A\u2082");
+    public void condicionA2(double[][] matrix){
+        System.out.println("La condicion del sistema lineal dado  A\u2082 : Cond(A) = sqrt(|A\u207B\u00B9|\u2082 * |A|\u2082)");
+        System.out.println("Es la raiz del producto");
+        System.out.println("La matriz ingresada es : ");
+        matrices.mostrarMatrix(matrix);
+        System.out.println("Y su transpuesta es :");
+        matrices.mostrarMatrix(matrices.matrixTranspuesta(matrix));
+        System.out.println("Y el producto entre ambas es :");
+        matrices.mostrarMatrix(matrices.multiplicacion(matrices.matrixTranspuesta(matrix),matrix));
+        System.out.println("Ahora repetimos el proceso, pero con la matrix inversa");
+        matrices.mostrarMatrix(matrices.inversaMatrix(matrix));
     }
     
     public void condicionAInfinito(double[][] matrix){
