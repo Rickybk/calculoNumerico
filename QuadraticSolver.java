@@ -14,6 +14,6 @@ public class QuadraticSolver
        root2 = (-b - Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
        System.out.println("El Maximo es :"+Math.max(root1, root2));
        System.out.println("El Minimo es :"+Math.min(root1, root2));
-       //return Math.max(root1, root2);  
+       System.out.println("La Raiz del Maximo es : " + Math.sqrt(Math.max(root1,root2))) ;
    }
 }
