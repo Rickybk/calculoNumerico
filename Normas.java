@@ -78,4 +78,14 @@ public class Normas
         matriz.mostrarMatrixJunta(multiplicado);
     }
     
+    public double normaInfinitoColumna(double[] a){
+        double resultado = 0.0;
+        for(int i = 0; i < a.length;i++){
+            if(Math.abs(a[i]) > resultado){
+                resultado = Math.abs(a[i]);
+            }            
+        }
+        System.out.printf("dexp: %f\n",resultado);
+        return resultado;
+    }
 }

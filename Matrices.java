@@ -101,6 +101,8 @@ public class Matrices
         // Solving AB = I for given A
         // Creo un objeto del tipo RealMatrix con los parametros y valores de la matriz 'Matrix'.
         RealMatrix A = new Array2DRowRealMatrix(Matrix);
+        
+        //DecompositionSolver Inverse = new LUDecomposition(A).getSolver().getInverse();
         System.out.println("La matriz ingresada es : ");
         //Creamos un String y almacenamos los datos del objeto RealMatrix A
         //con el metodo toString() de la clase RealMatrix.
@@ -162,5 +164,14 @@ public class Matrices
             }
             System.out.println("\n");
         }
+    }
+    
+    public double[] restaSimple(double [] a, double [] b){
+       double[] resultado = new double[a.length];
+       for(int i=0;i<a.length;i++){
+           resultado[i] = a[i] - b[i];
+           System.out.printf("dexp: %f\n",resultado[i]);
+        }
+       return resultado; 
     }
 }
