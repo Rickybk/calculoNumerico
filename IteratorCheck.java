@@ -19,7 +19,7 @@ public class IteratorCheck
         double denominador = norma.normaInfinitoColumna(a);
         double res = norma.normaInfinitoColumna(resultado)/ norma.normaInfinitoColumna(a);
         if(res < error){
-            System.out.println("El numerador es : "+numerador);
+            System.out.printf("El numerador es: %f\n",numerador);
             System.out.println("El denomiador es : "+denominador); 
             System.out.printf("dexp: %f\n",res);
             System.out.println("es menor al error");
